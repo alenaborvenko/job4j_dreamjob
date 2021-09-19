@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="ru.job4j.dream.store.Store" %>
-<%@ page import="ru.job4j.dream.model.Post" %>
+<%@ page import="ru.job4j.dream.model.Candidate" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,10 +28,12 @@
                 Новый кандидат.
             </div>
             <div class="card-body">
-                <form>
+                <form action="<%=request.getContextPath()%>/candidate/save" method="post">
                     <div class="form-group">
                         <label>Имя</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="name">
+                        <label>Описание</label>
+                        <input type="text" class="form-control" name="description">
                     </div>
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </form>
